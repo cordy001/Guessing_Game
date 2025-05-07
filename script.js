@@ -23,8 +23,6 @@ class AnimalGame {
        
        this.timer = 60
        
-       document.getElementById("animal_lastR").textContent = `its ${this.currentAnimals}`
-       
        this.setUpdate()
        
    }
@@ -62,6 +60,8 @@ class AnimalGame {
                
            }
            document.getElementById("timer").textContent = `${game.timer}`
+           
+           document.getElementById("animal_lastR").textContent = `its ${this.currentAnimals}`
            
        }, 1000)
        
