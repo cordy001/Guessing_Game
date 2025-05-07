@@ -40,7 +40,7 @@ class AnimalGame {
    setRounds() {
        
        this.rounds += 1
-       document.getElementById("rounds").textContent = `Rounds Points ${game.rounds}` 
+       document.getElementById("rounds").textContent = `Points ${game.rounds}` 
    }
    
    setTimer() {
@@ -48,7 +48,9 @@ class AnimalGame {
        setInterval(() => {
            if (this.timer > 0) {
                this.timer -= 1
-           } else {
+           } 
+           
+           if (this.timer < 1) {
                
                window.location.reload()
                alert(`Your Highest Score is ${this.rounds}`)
@@ -137,7 +139,8 @@ document.getElementById("start").addEventListener("click", () => {
     game.setUpdate()
     
     document.getElementById("guess").style.display = "block" 
-    
+
+document.getElementById("guessInput").disabled = false
     document.getElementById("start").style.display = "none" 
     
 })
@@ -164,7 +167,7 @@ function handleGuess() {
         
         game.timer = 61
         
-        document.getElementById("clue").style.color = "#000"
+        document.getElementById("clue").style.color = "#fff"
         
         
         
