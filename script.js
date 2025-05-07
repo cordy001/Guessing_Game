@@ -49,13 +49,15 @@ class AnimalGame {
            if (this.timer > 0) {
                this.timer -= 1
            } else {
-               alert(`Your Highest Score is ${this.rounds}`)
+               
                window.location.reload()
+               alert(`Your Highest Score is ${this.rounds}`)
            }
-           
            document.getElementById("timer").textContent = `${game.timer}`
            
        }, 1000)
+       
+       
        
    }
    
