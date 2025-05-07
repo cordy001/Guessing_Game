@@ -45,10 +45,12 @@ class AnimalGame {
    
    setTimer() {
        
-       setInterval(() => {
+       this.interval = setInterval(() => {
            if (this.timer > 0) {
                this.timer -= 1
            } 
+           
+           clearInterval(this.interval)
            
            if (this.timer < 1) {
                
