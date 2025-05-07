@@ -50,12 +50,14 @@ class AnimalGame {
                this.timer -= 1
            } 
            
-           clearInterval(this.interval)
-           
            if (this.timer < 1) {
                
-               window.location.reload()
-               alert(`Your Highest Score is ${this.rounds}`)
+               document.getElementById("points_result").textContent = `Your Score is ${this.rounds}`
+               
+               document.getElementById("game_cons_result").style.display = "flex"
+               
+               document.getElementById("game_cons").style.display = "none"
+               
            }
            document.getElementById("timer").textContent = `${game.timer}`
            
@@ -168,8 +170,6 @@ function handleGuess() {
         game.setUpdate()
         
         game.timer = 61
-        
-        document.getElementById("clue").style.color = "#fff"
         
         
         
