@@ -1,1 +1,1 @@
-# Guessing_Game
+# Typing Games
