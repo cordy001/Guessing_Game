@@ -4,7 +4,7 @@ class AnimalGame {
    
    constructor() {
        
-       this.animals = [
+    this.animals = [
     'Lion', 'Tiger', 'Elephant', 'Monkey', 'Giraffe',
     'Zebra', 'Rhinoceros', 'Leopard', 'Cheetah', 'Panda',
     'Orangutan', 'Kangaroo', 'Koala', 'Sloth', 'Cobra',
@@ -21,7 +21,7 @@ class AnimalGame {
        
        this.rounds = 0
        
-       this.timer = 60
+       this.timer = 10
        
        this.setUpdate()
        
@@ -61,7 +61,6 @@ class AnimalGame {
            }
            document.getElementById("timer").textContent = `${game.timer}`
            
-           document.getElementById("animal_lastR").textContent = `its ${this.currentAnimals}`
            
        }, 1000)
        
@@ -71,57 +70,57 @@ class AnimalGame {
    
    
    
-   handMiddle(word) {
+//    handMiddle(word) {
        
-       if (word.length <= 2) return word
+//        if (word.length <= 2) return word
        
-       const indices = []
+//        const indices = []
        
-       for (let i = 0; i < word.length; i++) {
+//        for (let i = 0; i < word.length; i++) {
            
-           indices.push(i)
+//            indices.push(i)
            
-       }
+//        }
        
-       for (let i = indices.length - 1; i > 0; i--) {
+//        for (let i = indices.length - 1; i > 0; i--) {
           
-          const j = Math.floor(Math.random() * (i + 1))
+//           const j = Math.floor(Math.random() * (i + 1))
           
-          const temp = indices[i]
-          indices[i] = indices[j]
-          indices[j] = temp
+//           const temp = indices[i]
+//           indices[i] = indices[j]
+//           indices[j] = temp
           
           
-       }
+//        }
        
-       const hideIndexes = [indices[0], indices[1]]
+//        const hideIndexes = []
        
-       let result = ''
+//        let result = ''
        
-       for (let i = 0; i < word.length; i++) {
+//        for (let i = 0; i < word.length; i++) {
            
-           if (hideIndexes.includes(i)) {
+//            if (hideIndexes.includes(i)) {
                
-               result += "*"
+//                result += "*"
                
-           } else {
+//            } else {
                
-               result += word[i]
+//                result += word[i]
                
                
                
-           }
+//            }
            
-       }
+//        }
        
        
-       return result
+//        return result
        
-   }
+//    }
    
    setUpdate() {
        
-       document.getElementById("clue").textContent = this.handMiddle(this.currentAnimals)
+       document.getElementById("clue").textContent = this.currentAnimals
        
    }
    
@@ -171,13 +170,13 @@ function handleGuess() {
         
         game.setUpdate()
         
-        game.timer = 61
+        game.timer = 11
         
         
         
     } else {
         
-        game.timer -= 10
+        game.timer -= 1
        
         document.getElementById("clue").classList.add("shake")
         
